@@ -1,15 +1,18 @@
-Laravel Fillable Relations
-===
+# Laravel Fillable Relations
 
 This library provides a trait for mixing in to an Eloquent Model. Doing so will enable support for fillable relations.
 
-To use, first require in your composer file:
+This is a stricter, versioned, and opinionated fork of https://github.com/troelskn/laravel-fillable-relations
+
+## Installation
 
 ```
-composer require troelskn/laravel-fillable-relations
+composer require albinodrought/laravel-fillable-relations
 ```
 
-Then, in your code:
+## Usage
+
+First, in your model:
 
 ```php
 <?php
@@ -21,7 +24,7 @@ use LaravelFillableRelations\Eloquent\Concerns\HasFillableRelations;
 class Foo extends Model
 {
     use HasFillableRelations;
-    protected $fillable_relations = ['bar'];
+    protected $fillableRelations = ['bar'];
 
     function bar()
     {
@@ -32,7 +35,7 @@ class Foo extends Model
 class Bar extends Model
 {
     use HasFillableRelations;
-    protected $fillable_relations = ['foos'];
+    protected $fillableRelations = ['foos'];
 
     function foos()
     {
@@ -44,6 +47,7 @@ class Bar extends Model
 And you can now fill relations, like so:
 
 ```php
+<?php
 $foo = new Foo(
     [
         'cuux' => 42,
@@ -57,6 +61,7 @@ $foo = new Foo(
 Or perhaps:
 
 ```php
+<?php
 $foo = new Foo(
     [
         'cuux' => 42,
@@ -70,6 +75,7 @@ $foo = new Foo(
 And also:
 
 ```php
+<?php
 $bar = new Bar(
     [
         'name' => "Ye Olde Pubbe",
@@ -84,3 +90,7 @@ $bar = new Bar(
     ]
 );
 ```
+
+## Testing
+
+`composer test`
