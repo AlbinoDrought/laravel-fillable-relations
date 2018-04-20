@@ -20,7 +20,7 @@ use ReflectionObject;
  *     class Foo extends Model
  *     {
  *         use HasFillableRelations;
- *         protected $fillable_relations = ['bar'];
+ *         protected $fillableRelations = ['bar'];
  *
  *         function bar()
  *         {
@@ -33,6 +33,7 @@ use ReflectionObject;
  *     $foo = new Foo(['bar' => ['name' => "Ye Olde Pubbe"]]);
  *
  * @mixin Model
+ * @property array $fillableRelations
  */
 trait HasFillableRelations
 {
@@ -41,11 +42,11 @@ trait HasFillableRelations
     // *
     // * @var array
     // */
-    // protected $fillable_relations = [];
+    // protected $fillableRelations = [];
 
     public function fillableRelations()
     {
-        return isset($this->fillable_relations) ? $this->fillable_relations : [];
+        return isset($this->fillableRelations) ? $this->fillableRelations : [];
     }
 
     public function extractFillableRelations(array $attributes)

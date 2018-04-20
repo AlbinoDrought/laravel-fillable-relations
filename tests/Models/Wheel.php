@@ -9,7 +9,7 @@ class Wheel extends Model
     use HasFillableRelations;
     public $timestamps = false;
     protected $fillable = ['size', 'vehicle_id'];
-    protected $fillable_relations = ['car'];
+    protected $fillableRelations = ['car'];
 
     function car()
     {

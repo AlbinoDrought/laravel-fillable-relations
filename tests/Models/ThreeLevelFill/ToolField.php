@@ -9,7 +9,7 @@ class ToolField extends Model
     use HasFillableRelations;
     protected $table = 'threelevelfill_fields';
     protected $fillable = ['name', 'tool_id'];
-    protected $fillable_relations = ['tool', 'choices'];
+    protected $fillableRelations = ['tool', 'choices'];
 
     function tool()
     {

@@ -10,7 +10,7 @@ class Test extends Model
     protected $table = 'iamfaiz_tests';
     public $timestamps = false;
     protected $fillable = ['name', 'preparation'];
-    protected $fillable_relations = ['questions'];
+    protected $fillableRelations = ['questions'];
     protected $with = ['questions'];
 
     function questions()

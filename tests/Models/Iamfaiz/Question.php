@@ -10,7 +10,7 @@ class Question extends Model
     protected $table = 'iamfaiz_questions';
     public $timestamps = false;
     protected $fillable = ['test_id', 'title', 'options'];
-    protected $fillable_relations = ['test'];
+    protected $fillableRelations = ['test'];
     protected $casts = [
         'options' => 'array',
     ];
