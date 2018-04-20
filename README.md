@@ -1,5 +1,8 @@
 # Laravel Fillable Relations
 
+
+[![Build Status](https://travis-ci.org/AlbinoDrought/laravel-fillable-relations.svg?branch=master)](https://travis-ci.org/AlbinoDrought/laravel-fillable-relations)
+
 This library provides a trait for mixing in to an Eloquent Model. Doing so will enable support for fillable relations.
 
 This is a stricter, versioned, and opinionated fork of https://github.com/troelskn/laravel-fillable-relations
