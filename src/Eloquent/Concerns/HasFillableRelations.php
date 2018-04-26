@@ -55,7 +55,7 @@ trait HasFillableRelations
 
         foreach ($this->fillableRelations() as $relationName) {
             $val = array_pull($attributes, $relationName);
-            if ($val) {
+            if (isset($val)) {
                 $relationsAttributes[$relationName] = $val;
             }
         }
